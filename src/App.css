@@ -86,9 +86,25 @@
 }
 
 @media (max-width:1250px) {
+  #root {
+    position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      color: #ffffff;
+      font-family: Arial;
+      background-image: url("./Background.jpg");
+      background-color: #0e4fd1;
+      background-size: cover;
+      background-position: center;
+  }
   
   .weathercards{
-    margin-top: 20px;
+    margin-top: 5vh;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -97,7 +113,7 @@
   }
 
   .Search {
-    margin-top: 0;
+    margin-top: 20vh;
     margin-bottom: 0;
     position: relative;
     display: flex;
