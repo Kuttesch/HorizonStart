@@ -10,7 +10,9 @@ function App() {
   });
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [weatherData, setWeatherData] = useState(null);
+  const [todayWeather, setTodayWeather] = useState({});
+  const [tomorrowWeather, setTomorrowWeather] = useState({});
+  const [lastWeather, setLastWeather] = useState({});
   const [longitude, setLongitude] = useState(localStorage.getItem('Longitude') || '');
   const [latitude, setLatitude] = useState(localStorage.getItem('Latitude') || '');
 
@@ -43,6 +45,7 @@ function App() {
 
   const getPosition = () => {
     if (navigator.geolocation) {
+      console.log("Position in");
       navigator.geolocation.getCurrentPosition((position) => {
         setLongitude(position.coords.longitude);
         setLatitude(position.coords.latitude);
@@ -65,14 +68,34 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setWeatherData(data);
+        setTodayWeather({
+          currentTemp: Math.round(data.current.temperature_2m),
+          maxTemp: Math.round(data.daily.temperature_2m_max[0]),
+          minTemp: Math.round(data.daily.temperature_2m_min[0]),
+          date: formatDate(data.daily.time[0]),
+          icon: switchIcon(data.current.weather_code),
+        });
+        setTomorrowWeather({
+          currentTemp: Math.round((data.daily.temperature_2m_max[1] + data.daily.temperature_2m_min[1])/2),
+          maxTemp: Math.round(data.daily.temperature_2m_max[1]),
+          minTemp: Math.round(data.daily.temperature_2m_min[1]),
+          date: formatDate(data.daily.time[1]),
+          icon: switchIcon(data.daily.weather_code[1]),
+        });
+        setLastWeather({
+          currentTemp: Math.round((data.daily.temperature_2m_max[2] + data.daily.temperature_2m_min[2])/2),
+          maxTemp: Math.round(data.daily.temperature_2m_max[2]),
+          minTemp: Math.round(data.daily.temperature_2m_min[2]),
+          date: formatDate(data.daily.time[2]),
+          icon: switchIcon(data.daily.weather_code[2]),
+        });
       })
       .catch(error => console.error("Error fetching weather data:", error));
   };
 
   useEffect(() => {
     getWeather();
-  }, [latitude, longitude]);
+  }, []);
 
   const switchIcon = (id) => {
     const IconMap = {
@@ -144,10 +167,17 @@ function App() {
         </div>
       </div>
       <div className="weathercards">
-        {weatherData && <Weather weatherData={weatherData} />}
-      </div>
+  {todayWeather.currentTemp && (
+    <Weather    
+      currentTemp={todayWeather.currentTemp}
+      maxTemp={todayWeather.maxTemp}
+      minTemp={todayWeather.minTemp}
+      date={todayWeather.date}
+      icon={todayWeather.icon}
+    />
+  )}
+</div>
     </>
   );
 }
-
 export default App;

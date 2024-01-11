@@ -1,26 +1,28 @@
-function Weather({ weatherData }){
-    if (!weatherData) {
+import './weather.css'
+
+function Weather(currentTemp,maxTemp,minTemp,date,icon){
+    if (currentTemp === undefined || maxTemp === undefined || minTemp === undefined || date === undefined || icon === undefined) {
         return null; // or return a loading indicator
     }
     return (
         <>
             <div className="weather">
                 <div className="left">
-                    <div className="current-temp">{weatherData.currentTemp}</div>
+                    <div className="current-temp">{currentTemp} °C</div>
                     <div className="left-bottom">
-                        <div className="max-temp">{weatherData.maxTemp}</div>
-                        <div className="min-temp">{weatherData.minTemp}</div>
+                        <div className="max-temp">↑ {maxTemp} °C</div>
+                        <div className="min-temp">↓ {minTemp} °C</div>
                     </div>
                 </div>
                 <div className="right">
-                    <div className="date">{weatherData.date}</div>
+                    <div className="date">{date}</div>
                     <div className="icon">
-                        <span className="symbol">{weatherData.icon}</span>
+                        <span className="symbol">{icon}</span>
                     </div>
                 </div>
             </div>
         </>
-    ) 
+    )
 }
 
 export default Weather;
