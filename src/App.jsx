@@ -174,8 +174,23 @@ function App() {
       minTemp={todayWeather.minTemp}
       date={todayWeather.date}
       icon={todayWeather.icon}
-    />
-  )}
+    />)}
+  {tomorrowWeather.currentTemp && (
+  <Weather    
+      currentTemp={tomorrowWeather.currentTemp}
+      maxTemp={tomorrowWeather.maxTemp}
+      minTemp={tomorrowWeather.minTemp}
+      date={tomorrowWeather.date}
+      icon={tomorrowWeather.icon}
+    />)}
+  {lastWeather.currentTemp && (
+    <Weather    
+      currentTemp={lastWeather.currentTemp}
+      maxTemp={lastWeather.maxTemp}
+      minTemp={lastWeather.minTemp}
+      date={lastWeather.date}
+      icon={lastWeather.icon}
+    />)}
 </div>
     </>
   );

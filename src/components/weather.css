@@ -73,3 +73,16 @@
     font-family: 'Material Symbols Outlined';
     font-size: 90px;
 }
+
+@media (max-width:1250px) {
+    .weather{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 80vw;
+        height: 130px;
+        border-radius: 20px;
+        background: linear-gradient(91deg, rgba(30, 30, 30, 0.95) 0%, rgba(30, 30, 30, 0.85) 100%);
+        /*background-color: brown;*/  
+    }
+  }
