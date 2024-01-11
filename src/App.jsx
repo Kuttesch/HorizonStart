@@ -21,8 +21,8 @@ function App() {
   useEffect(() => {
     const updateClock = () => {
       let now = new Date();
-      let hours = padTime(now.getHours());
-      let minutes = padTime(now.getMinutes());
+      let hours = padTime(now.getHours()) + ":";
+      let minutes = padTime(now.getMinutes()) + ":";
       let seconds = padTime(now.getSeconds());
 
       setTime({ hours, minutes, seconds });
@@ -150,7 +150,7 @@ function App() {
     <>
       <div className="Search">
         <div className="clock">
-          <span id="clock">{time.hours}:{time.minutes}:{time.seconds}</span>
+          <span id="clock">{time.hours}{time.minutes}{time.seconds}</span>
         </div>
         <div className="search-bar">
           <div className="search-animation">
