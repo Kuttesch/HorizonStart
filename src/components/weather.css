@@ -29,7 +29,7 @@
     justify-content: center;
     height: 50%;
     width: 100%;
-    font-size: 40px;
+    font-size: 260%;
     font-weight: bold;
 }
 
@@ -47,7 +47,7 @@
     justify-content: center;
     height: 100%;
     width: 50%;
-    font-size: 20px;
+    font-size: 130%;
     font-weight: bold;
 }
 
@@ -58,7 +58,7 @@
     height: 25%;
     width: 100%;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 130%;
 }
 
 .icon{
@@ -71,7 +71,7 @@
 
 .symbol{
     font-family: 'Material Symbols Outlined';
-    font-size: 90px;
+    font-size: 600%;
 }
 
 @media (max-width:1250px) {
@@ -85,4 +85,14 @@
         background: linear-gradient(91deg, rgba(30, 30, 30, 0.95) 0%, rgba(30, 30, 30, 0.85) 100%);
         /*background-color: brown;*/  
     }
+    .max-temp,
+    .min-temp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    font-size: 130%;
+    font-weight: bold;
+}
   }
