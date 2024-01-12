@@ -141,7 +141,7 @@
   }
 }
 
-@media (min-height:500px) and (min-width:850px) and (max-width:1250px) {
+@media (min-height:500px) and (min-width:850px) and (max-width:1300px) {
   #root {
     position: relative;
     display: flex;
@@ -198,7 +198,7 @@
   }
 }
 
-@media (max-height:500px) and (min-width:850px) and (max-width:1250px) {
+@media (max-height:500px) and (min-width:850px) and (max-width:1300px) {
   #root {
     position: relative;
     display: flex;
