@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Weather from './components/weather';
+import WeatherSkeleton from './components/weatherskeleton';
+
 
 function App() {
   const [time, setTime] = useState({
@@ -15,6 +17,7 @@ function App() {
   const [lastWeather, setLastWeather] = useState({});
   const [longitude, setLongitude] = useState(localStorage.getItem('Longitude') || '');
   const [latitude, setLatitude] = useState(localStorage.getItem('Latitude') || '');
+  const [isLoading, setIsLoading] = useState(true);
 
   const padTime = (time) => (time < 10 ? "0" + time : time);
 
@@ -42,8 +45,9 @@ function App() {
       setSearchQuery("");
     }
   };
-
+  
   const getPosition = () => {
+    setIsLoading(true);
     if (navigator.geolocation) {
       console.log("Position in");
       navigator.geolocation.getCurrentPosition((position) => {
@@ -89,6 +93,7 @@ function App() {
           date: formatDate(data.daily.time[2]),
           icon: switchIcon(data.daily.weather_code[2]),
         });
+        setIsLoading(false);
       })
       .catch(error => console.error("Error fetching weather data:", error));
   };
@@ -96,7 +101,7 @@ function App() {
   useEffect(() => {
     getWeather();
   }, []);
-
+  
   const switchIcon = (id) => {
     const IconMap = {
       0: 'clear_day',
@@ -167,30 +172,30 @@ function App() {
         </div>
       </div>
       <div className="weathercards">
-  {todayWeather.currentTemp && (
+  {isLoading ? <WeatherSkeleton /> :
     <Weather    
       currentTemp={todayWeather.currentTemp}
       maxTemp={todayWeather.maxTemp}
       minTemp={todayWeather.minTemp}
       date={todayWeather.date}
       icon={todayWeather.icon}
-    />)}
-  {tomorrowWeather.currentTemp && (
+    />}
+  {isLoading ? <WeatherSkeleton /> :
   <Weather    
       currentTemp={tomorrowWeather.currentTemp}
       maxTemp={tomorrowWeather.maxTemp}
       minTemp={tomorrowWeather.minTemp}
       date={tomorrowWeather.date}
       icon={tomorrowWeather.icon}
-    />)}
-  {lastWeather.currentTemp && (
+    />}
+  {isLoading ? <WeatherSkeleton /> :
     <Weather    
       currentTemp={lastWeather.currentTemp}
       maxTemp={lastWeather.maxTemp}
       minTemp={lastWeather.minTemp}
       date={lastWeather.date}
       icon={lastWeather.icon}
-    />)}
+    />}
 </div>
     </>
   );
