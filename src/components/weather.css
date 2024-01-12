@@ -4,7 +4,8 @@
     font-weight: 400;
     src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v156/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
 }
-.weather{
+
+.weather {
     display: flex;
     flex-direction: row;
     margin-right: 10px;
@@ -12,18 +13,18 @@
     height: 130px;
     border-radius: 20px;
     background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
-    /*background-color: brown;*/
+        /*background-color: brown;*/
 }
 
 .left,
-.right{
+.right {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 50%;
 }
 
-.current-temp{
+.current-temp {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,7 +34,7 @@
     font-weight: bold;
 }
 
-.left-bottom{
+.left-bottom {
     display: flex;
     flex-direction: row;
     height: 50%;
@@ -41,7 +42,7 @@
 }
 
 .max-temp,
-.min-temp{
+.min-temp {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +52,7 @@
     font-weight: bold;
 }
 
-.date{
+.date {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +62,7 @@
     font-size: 130%;
 }
 
-.icon{
+.icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +70,7 @@
     width: 100%;
 }
 
-.symbol{
+.symbol {
     font-family: 'Material Symbols Outlined';
     font-size: 600%;
 }
@@ -79,43 +80,192 @@
     width: 400px;
     height: 130px;
     border-radius: 20px;
-	background-size: 400% 400%;
+    background-size: 400% 400%;
     background: linear-gradient(-45deg, #3b3b3b9d, #0000009d, #3b3b3b9d, #0000009d);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
     }
 
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+    50% {
+        background-position: 100% 50%;
     }
 
-@media (max-width:1250px) {
-    .weather{
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width:500px) {
+    .weather {
         display: flex;
         flex-direction: row;
         margin-bottom: 10px;
         width: 80vw;
         height: 15vh;
         border-radius: 20px;
-        background: linear-gradient(91deg, rgba(30, 30, 30, 0.95) 0%, rgba(30, 30, 30, 0.85) 100%);
-        /*background-color: brown;*/  
+        background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
     }
+
     .max-temp,
-    .min-temp{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50%;
-    font-size: 130%;
-    font-weight: bold;
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
 }
-  }
+
+@media (min-width:500px) and (max-width:850px) {
+    .weather {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 70vw;
+        height: 15vh;
+        border-radius: 20px;
+        background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
+    }
+
+    .max-temp,
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+}
+
+
+@media (min-height:500px) and (min-width:850px) and (max-width:1250px) {
+    .weather {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 10px;
+        width: 20vw;
+        height: 30vh;
+        border-radius: 20px;
+        background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
+    }
+
+    .max-temp,
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+
+    .left,
+    .right {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        width: 100%;
+    }
+
+    .current-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        width: 100%;
+        font-size: 260%;
+        font-weight: bold;
+    }
+
+    .left-bottom {
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+        width: 100%;
+    }
+
+    .max-temp,
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+
+    .date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25%;
+        width: 100%;
+        font-weight: bold;
+        font-size: 130%;
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75%;
+        width: 100%;
+    }
+}
+
+@media (max-height:500px) and (min-width:850px) and (max-width:1250px) {
+    .weather {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 30vw;
+        height: 30vh;
+        border-radius: 20px;
+        background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
+    }
+
+    .max-temp,
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+}
+
+@media (min-width:500px) and (max-width:850px) {
+    .weather {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+        width: 70vw;
+        height: 15vh;
+        border-radius: 20px;
+        background: linear-gradient(-45deg, #3b3b3b9d, #0000009d)
+    }
+
+    .max-temp,
+    .min-temp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        font-size: 130%;
+        font-weight: bold;
+    }
+}

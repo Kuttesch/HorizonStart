@@ -1,6 +1,6 @@
 import './weather.css'
 
-function Weather({currentTemp,maxTemp,minTemp,date,icon}){
+function Weather({ currentTemp, maxTemp, minTemp, date, icon }) {
     if (currentTemp === undefined || maxTemp === undefined || minTemp === undefined || date === undefined || icon === undefined) {
         return null; // or return a loading indicator
     }

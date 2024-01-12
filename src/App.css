@@ -1,18 +1,18 @@
 #root {
   position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    color: #ffffff;
-    font-family: Arial;
-    background-image: url("./Background.jpg");
-    background-color: #0e4fd1;
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial;
+  background-image: url("./Background.jpg");
+  background-color: #0e4fd1;
+  background-size: cover;
+  background-position: center;
 }
 
 .Search {
@@ -76,7 +76,7 @@
   opacity: 1;
 }
 
-.weathercards{
+.weathercards {
   margin-top: auto;
   margin-bottom: 20px;
   display: flex;
@@ -85,25 +85,25 @@
   height: 130px;
 }
 
-@media (max-width:1250px) {
+@media (max-width:850px) {
   #root {
     position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      height: 100vh;
-      width: 100vw;
-      margin: 0;
-      color: #ffffff;
-      font-family: Arial;
-      background-image: url("./Background.jpg");
-      background-color: #0e4fd1;
-      background-size: cover;
-      background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial;
+    background-image: url("./Background.jpg");
+    background-color: #0e4fd1;
+    background-size: cover;
+    background-position: center;
   }
-  
-  .weathercards{
+
+  .weathercards {
     margin-top: 5vh;
     margin-bottom: 20px;
     display: flex;
@@ -137,6 +137,120 @@
 
   .clock {
     font-size: 15vw;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-height:500px) and (min-width:850px) and (max-width:1250px) {
+  #root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial;
+    background-image: url("./Background.jpg");
+    background-color: #0e4fd1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .weathercards {
+    margin-top: 5vh;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 130px;
+  }
+
+  .Search {
+    margin-top: 20vh;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vh;
+    height: 5vw;
+    background-color: #29c178;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clock {
+    font-size: 15vh;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-height:500px) and (min-width:850px) and (max-width:1250px) {
+  #root {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial;
+    background-image: url("./Background.jpg");
+    background-color: #0e4fd1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .weathercards {
+    margin-top: 5vh;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+  }
+
+  .Search {
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vh;
+    height: 5vw;
+    background-color: #29c178;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clock {
+    font-size: 15vh;
     margin-bottom: 40px;
   }
 }

@@ -45,7 +45,7 @@ function App() {
       setSearchQuery("");
     }
   };
-  
+
   const getPosition = () => {
     setIsLoading(true);
     if (navigator.geolocation) {
@@ -80,14 +80,14 @@ function App() {
           icon: switchIcon(data.current.weather_code),
         });
         setTomorrowWeather({
-          currentTemp: Math.round((data.daily.temperature_2m_max[1] + data.daily.temperature_2m_min[1])/2),
+          currentTemp: Math.round((data.daily.temperature_2m_max[1] + data.daily.temperature_2m_min[1]) / 2),
           maxTemp: Math.round(data.daily.temperature_2m_max[1]),
           minTemp: Math.round(data.daily.temperature_2m_min[1]),
           date: formatDate(data.daily.time[1]),
           icon: switchIcon(data.daily.weather_code[1]),
         });
         setLastWeather({
-          currentTemp: Math.round((data.daily.temperature_2m_max[2] + data.daily.temperature_2m_min[2])/2),
+          currentTemp: Math.round((data.daily.temperature_2m_max[2] + data.daily.temperature_2m_min[2]) / 2),
           maxTemp: Math.round(data.daily.temperature_2m_max[2]),
           minTemp: Math.round(data.daily.temperature_2m_min[2]),
           date: formatDate(data.daily.time[2]),
@@ -101,7 +101,7 @@ function App() {
   useEffect(() => {
     getWeather();
   }, []);
-  
+
   const switchIcon = (id) => {
     const IconMap = {
       0: 'clear_day',
@@ -172,31 +172,31 @@ function App() {
         </div>
       </div>
       <div className="weathercards">
-  {isLoading ? <WeatherSkeleton /> :
-    <Weather    
-      currentTemp={todayWeather.currentTemp}
-      maxTemp={todayWeather.maxTemp}
-      minTemp={todayWeather.minTemp}
-      date={todayWeather.date}
-      icon={todayWeather.icon}
-    />}
-  {isLoading ? <WeatherSkeleton /> :
-  <Weather    
-      currentTemp={tomorrowWeather.currentTemp}
-      maxTemp={tomorrowWeather.maxTemp}
-      minTemp={tomorrowWeather.minTemp}
-      date={tomorrowWeather.date}
-      icon={tomorrowWeather.icon}
-    />}
-  {isLoading ? <WeatherSkeleton /> :
-    <Weather    
-      currentTemp={lastWeather.currentTemp}
-      maxTemp={lastWeather.maxTemp}
-      minTemp={lastWeather.minTemp}
-      date={lastWeather.date}
-      icon={lastWeather.icon}
-    />}
-</div>
+        {isLoading ? <WeatherSkeleton /> :
+          <Weather
+            currentTemp={todayWeather.currentTemp}
+            maxTemp={todayWeather.maxTemp}
+            minTemp={todayWeather.minTemp}
+            date={todayWeather.date}
+            icon={todayWeather.icon}
+          />}
+        {isLoading ? <WeatherSkeleton /> :
+          <Weather
+            currentTemp={tomorrowWeather.currentTemp}
+            maxTemp={tomorrowWeather.maxTemp}
+            minTemp={tomorrowWeather.minTemp}
+            date={tomorrowWeather.date}
+            icon={tomorrowWeather.icon}
+          />}
+        {isLoading ? <WeatherSkeleton /> :
+          <Weather
+            currentTemp={lastWeather.currentTemp}
+            maxTemp={lastWeather.maxTemp}
+            minTemp={lastWeather.minTemp}
+            date={lastWeather.date}
+            icon={lastWeather.icon}
+          />}
+      </div>
     </>
   );
 }
