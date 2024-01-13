@@ -147,7 +147,7 @@
 }
 
 
-@media (min-height:500px) and (max-width:1300px) {
+@media (min-height:500px) and (min-width:700px) and (max-width:1250px) {
     .weather {
         display: flex;
         flex-direction: column-reverse;
@@ -224,7 +224,7 @@
     }
 }
 
-@media (max-height:500px) and (max-width:1300px) {
+@media (max-height:500px) and (min-width:100px) and (max-width:1250px) {
     .weather {
         display: flex;
         flex-direction: row;
@@ -247,7 +247,7 @@
     }
 }
 
-@media (min-width:500px) and (max-width:850px) {
+@media (min-width:500px) and (max-width:1250px) {
     .weather {
         display: flex;
         flex-direction: row;
